@@ -1,41 +1,41 @@
 # PlantLover — Home Assistant Integration
 
-Integracja do [PlantLover](https://github.com/lukaszgdk/plantlover) — aplikacji do zarządzania roślinami domowymi.
+Home Assistant integration for [PlantLover](https://github.com/lukaszgdk/plantlover) — a self-hosted plant management app.
 
 ![PlantLover Dashboard](docs/dashboard.png)
 
-## Funkcje
+## Features
 
-- Sensory dla każdej rośliny: ostatnie podlanie, następne podlanie, dni do podlania
-- Przycisk **Podlej** dla każdej rośliny
-- Automatyczne odświeżanie co 5 minut
+- Sensors for each plant: last watered, next watering, days until watering
+- **Water** button for each plant
+- Auto-refresh every 5 minutes
 
-## Instalacja przez HACS
+## Installation via HACS
 
-1. W HACS → **Custom repositories** → dodaj `https://github.com/lukaszgdk/plantlover-ha` jako **Integration**
-2. Znajdź **PlantLover** w HACS i zainstaluj
-3. Uruchom ponownie Home Assistant
-4. Ustawienia → Urządzenia i usługi → **Dodaj integrację** → PlantLover
-5. Podaj adres URL swojej aplikacji PlantLover (np. `http://10.10.30.270`)
+1. In HACS → **Custom repositories** → add `https://github.com/lukaszgdk/plantlover-ha` as **Integration**
+2. Find **PlantLover** in HACS and install
+3. Restart Home Assistant
+4. Settings → Devices & Services → **Add Integration** → PlantLover
+5. Enter the URL of your PlantLover instance (e.g. `http://192.168.1.100:8000`)
 
-## Dashboard Lovelace
+## Lovelace Dashboard
 
-W repozytorium znajduje się gotowy plik `dashboard.yaml`.
+A ready-to-use `dashboard.yaml` is included in the repository.
 
-**Opcja A — auto-entities (automatyczny, zawsze aktualny):**
+**Option A — auto-entities (automatic, always up to date):**
 
-1. Zainstaluj w HACS frontend: [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
-2. W HA: Ustawienia → Dashboardy → Dodaj dashboard → z pliku YAML → wklej treść `dashboard.yaml`
+1. Install via HACS frontend: [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
+2. In HA: Settings → Dashboards → Add Dashboard → from YAML → paste the contents of `dashboard.yaml`
 
-**Opcja B — spersonalizowany YAML z dokładnymi encjami:**
+**Option B — personalised YAML with exact entities:**
 
 ```bash
-GET http://<adres-plantlover>/api/plants/ha-dashboard
+GET http://<plantlover-address>/api/plants/ha-dashboard
 ```
 
-Endpoint generuje YAML z encjami dla każdej Twojej rośliny. Skopiuj odpowiedź do HA.
+This endpoint generates a YAML config with entities for each of your plants. Copy the response into HA.
 
-## Wymagania
+## Requirements
 
-- Działająca instancja [PlantLover](https://github.com/lukaszgdk/plantlover)
+- A running [PlantLover](https://github.com/lukaszgdk/plantlover) instance
 - Home Assistant 2023.1+
