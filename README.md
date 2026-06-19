@@ -1,6 +1,8 @@
 # PlantLover — Home Assistant Integration
 
-Integracja do [PlantLover](https://github.com/lukaszgdk/plantlover-ha) — aplikacji do zarządzania roślinami domowymi.
+Integracja do [PlantLover](https://github.com/lukaszgdk/plantlover) — aplikacji do zarządzania roślinami domowymi.
+
+![PlantLover Dashboard](docs/dashboard.png)
 
 ## Funkcje
 
